@@ -4,5 +4,7 @@ public class Main {
         System.out.println(triangle);
         triangle.setColor("blue");
         System.out.println(triangle);
+        triangle.inputData();
+        System.out.println(triangle);
     }
 }

@@ -1,7 +1,9 @@
+import java.util.Scanner;
+
 public class Triangle extends Shape {
-    private double side1=1.0;
-    private double side2=1.0;
-    private double side3=1.0;
+    private double side1 = 1.0;
+    private double side2 = 1.0;
+    private double side3 = 1.0;
 
     public Triangle() {
     }
@@ -35,13 +37,17 @@ public class Triangle extends Shape {
     public void setSide3(double side3) {
         this.side3 = side3;
     }
-    public double getArea(){
-        double p = (side1+side2+side3)/3;
-       return Math.pow(0.5, p*(p-side1)*(p-side2)*(p-side3));
 
-    };
-    public double getPerimeter(){
-        return side1+side2+side3;
+    public double getArea() {
+        double p = (side1 + side2 + side3) / 3;
+        return Math.pow(0.5, p * (p - side1) * (p - side2) * (p - side3));
+
+    }
+
+    ;
+
+    public double getPerimeter() {
+        return side1 + side2 + side3;
     }
 
     @Override
@@ -50,8 +56,21 @@ public class Triangle extends Shape {
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +
-                " area "+ getArea()+
-                " perimeter "+getPerimeter()+ super.toString()+
+                " area " + getArea() +
+                " perimeter " + getPerimeter() + super.toString() +
                 '}';
+    }
+
+    public void inputData() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhap side1");
+        this.side1 = scanner.nextDouble();
+        System.out.println("Nhap side2");
+        this.side2 = scanner.nextDouble();
+        System.out.println("Nhap side3");
+        this.side3 = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Nhap mau sac");
+        this.setColor(scanner.nextLine());
     }
 }
